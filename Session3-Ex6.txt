@@ -1,0 +1,39 @@
+
+/* Write a code which gets the coefficients of a quadratic equation and shows its roots.*/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Session3_Ex6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Please enter the value of the first coefficient (a):");
+            float a = float.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter the value of the first coefficient (b):");
+            float b = float.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter the value of the first coefficient (c):");
+            float c = float.Parse(Console.ReadLine());
+            float delta = b * b - 4 * a * c;
+            if (delta > 0)
+            {
+                Console.WriteLine("root1:" + (-b + Math.Sqrt(delta)) / 2 * a);
+                Console.WriteLine("root2:" + (-b - Math.Sqrt(delta)) / 2 * a);
+            }
+            else if (delta == 0)
+            {
+                Console.WriteLine("root1:" + -b / 2 * a);
+                Console.WriteLine("root2:" + -b / 2 * a);
+            }
+            else
+                Console.WriteLine("There are no roots for this equation");
+
+            Console.ReadKey();
+        }
+    }
+}
